@@ -14,5 +14,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class SimpleResponse {
 
+    private Integer code;
+
     private Object content;
 }

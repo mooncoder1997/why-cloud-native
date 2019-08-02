@@ -12,7 +12,7 @@ import why.scaffold.security.core.repository.UserRepository;
 
 /**
  * @className: WHYUserDetailService
- * @description:
+ * @description: 根据用户名加载用户
  * @version: v1.0
  * @date: 2019/8/1 11:03
  * @author: Wang, Haoyue
@@ -20,13 +20,10 @@ import why.scaffold.security.core.repository.UserRepository;
 @Component("whyUserDetailService")
 public class WHYUserDetailService implements UserDetailsService {
 
-    static final ILogger logger = SLoggerFactory.getLogger(WHYUserDetailService.class);
+    private static final ILogger logger = SLoggerFactory.getLogger(WHYUserDetailService.class);
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
